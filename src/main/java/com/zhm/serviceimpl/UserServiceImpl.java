@@ -33,14 +33,21 @@ public class UserServiceImpl implements UserService {
 		} finally {
 			sqlSession.close();
 		}
-
 		return count > 0;
 	}
 
 	@Override
-	public boolean userDelete(int id) {
-
-		return false;
+	public boolean userDelete(User user) {
+        SqlSession sqlSession=DBConnect.getSqlSession();
+        boolean delete=false;
+        try {
+			UserDao userDao = sqlSession.getMapper(UserDao.class);
+			delete=userDao.delete(user);
+			sqlSession.commit();
+		} finally{
+			sqlSession.close();
+		}
+		return delete;
 	}
 
 }

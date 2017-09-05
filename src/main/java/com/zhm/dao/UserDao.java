@@ -1,6 +1,8 @@
 package com.zhm.dao;
 
 import com.zhm.entity.User;
+
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -15,4 +17,7 @@ public interface UserDao {
 
     @Select("select id,username,password from user where username=#{username} and password=#{password}")
     User select(@Param("username") String username,@Param("password") String password);
+    
+    @Delete("delete from user where id=#{id}")
+    boolean delete(User user);
 }

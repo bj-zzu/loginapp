@@ -20,13 +20,15 @@ public class DBTest {
 		SqlSession session = DBConnect.getSqlSession();
 		if (session == null) {
 			System.out.println("null");
+		}else{
+			System.out.println(session);
 		}
 	}
 
 	@Test
 	public void testAddUser() {
 		User user = new User();
-		user.setUsername("b");
+		user.setUsername("lll");
 		user.setPassword("123456");
 		UserService userService = new UserServiceImpl();
 		boolean result = userService.userAdd(user);
@@ -42,6 +44,14 @@ public class DBTest {
 		boolean result = userService.userLogin(user);
 		System.out.println(result);
 
+	}
+	
+	@Test
+	public void testDelete(){
+//		int id=13;
+//		UserService userService=new UserServiceImpl();
+//		boolean result=userService.userDelete(id);
+//		System.out.println(result);
 	}
 
 }
