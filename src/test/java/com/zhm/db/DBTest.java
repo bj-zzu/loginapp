@@ -48,10 +48,8 @@ public class DBTest {
 	
 	@Test
 	public void testDelete(){
-//		int id=13;
-//		UserService userService=new UserServiceImpl();
-//		boolean result=userService.userDelete(id);
-//		System.out.println(result);
+//	 
 	}
+	
 
 }
