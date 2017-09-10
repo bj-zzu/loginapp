@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="com.zhm.entity.*" %>	
+<%@ page import="com.zhm.entity.*,com.zhm.service.UserService,com.zhm.serviceimpl.UserServiceImpl" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,17 +15,25 @@
 		<img width="720" height="640" src="picture/34.jpg">
 	</div>
 	<div id="delete" align="center">
-	    <!--  
-		<form action="UserDeleteServlet">
+	    <%
+		   User user=(User)request.getAttribute("user");
+	       
+		%>
+		 <p>如果你不喜欢我们的网站，就注销掉吧</p>
+		<form action="UserDeleteServlet" method="post">
 			<table>
 				<tr>
-					<td></td>
+					<td>用户名：<input type="text" name="username" value=<%user.getUsername(); %>></td>
 				</tr>
+				<tr>
+				    <td>密码：<input type="password" name="password" value=<%user.getPassword(); %>></td>
+				</tr>
+	            <tr>
+	               <td><input type="submit" value="删除用户"></td>
+	            </tr>
 			</table>
-			<input type="submit" value="确定">
+			
 		</form>
-		-->
-		<p>如果你实在不喜欢我们的网站，那就<a href="UserDeleteServlet">注销</a>掉吧，拜拜</p>
 	</div>
 </body>
 </html>

@@ -43,12 +43,16 @@ public class DBTest {
 		UserService userService = new UserServiceImpl();
 		boolean result = userService.userLogin(user);
 		System.out.println(result);
-
 	}
 	
 	@Test
-	public void testDelete(){
-//	 
+	public void testDelete(){ 
+		User user=new User();
+		user.setUsername("root");
+		user.setPassword("root");
+		UserService userService=new UserServiceImpl();
+		boolean result=userService.userDelete(user);
+		System.out.println(result);
 	}
 	
 
