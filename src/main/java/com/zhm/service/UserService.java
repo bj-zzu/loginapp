@@ -11,9 +11,9 @@ import com.zhm.entity.User;
  */
 public interface UserService {
 
-	public boolean userLogin(User u);
+	User userLogin(User u);
 	
-	public boolean userAdd(User u);
+	boolean userAdd(User u);
 	
-	public boolean userDelete(User user);
+	boolean userDelete(User user);
 }

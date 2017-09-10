@@ -18,6 +18,6 @@ public interface UserDao {
     @Select("select id,username,password from user where username=#{username} and password=#{password}")
     User select(@Param("username") String username,@Param("password") String password);
     
-    @Delete("delete from user where username=#{username} and password=#{password}")
+    @Delete("delete from user where id=#{id}")
     boolean delete(User u);
 }

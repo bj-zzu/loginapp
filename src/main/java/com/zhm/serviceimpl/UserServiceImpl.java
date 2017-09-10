@@ -10,7 +10,7 @@ import com.zhm.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	@Override
-	public boolean userLogin(User u) {
+	public User userLogin(User u) {
 		SqlSession sqlSession = DBConnect.getSqlSession();
 		User user = null;
 		try {
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 		} finally {
 			sqlSession.close();
 		}
-		return user != null;
+		return user;
 	}
 
 	@Override

@@ -41,8 +41,7 @@ public class DBTest {
 		user.setUsername("c");
 		user.setPassword("123456");
 		UserService userService = new UserServiceImpl();
-		boolean result = userService.userLogin(user);
-		System.out.println(result);
+		user = userService.userLogin(user);
 	}
 	
 	@Test

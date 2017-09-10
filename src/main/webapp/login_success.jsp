@@ -15,19 +15,9 @@
 		<img width="720" height="640" src="picture/34.jpg">
 	</div>
 	<div id="delete" align="center">
-	    <%
-		   User user=(User)request.getAttribute("user");
-	       
-		%>
 		 <p>如果你不喜欢我们的网站，就注销掉吧</p>
 		<form action="UserDeleteServlet" method="post">
 			<table>
-				<tr>
-					<td>用户名：<input type="text" name="username" value=<%user.getUsername(); %>></td>
-				</tr>
-				<tr>
-				    <td>密码：<input type="password" name="password" value=<%user.getPassword(); %>></td>
-				</tr>
 	            <tr>
 	               <td><input type="submit" value="删除用户"></td>
 	            </tr>

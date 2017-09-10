@@ -32,8 +32,9 @@ public class UserLoginServlet extends HttpServlet {
 		user.setUsername(username);
 		user.setPassword(password);
 		UserService userService=new UserServiceImpl();
-		if(userService.userLogin(user)){
-			request.setAttribute("user", user);
+		user = userService.userLogin(user);
+		if(user != null){
+			request.getSession().setAttribute("user", user);
 			request.getRequestDispatcher("login_success.jsp").forward(request, response);
 		}else{
 			request.getRequestDispatcher("login_failure.jsp").forward(request, response);
